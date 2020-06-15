@@ -1,0 +1,102 @@
+porta.rules
+  PORTA is a collection of routines for analyzing polytopes and polyhedra.
+  Copyright by Thomas Christof and Andreas Loebel.
+  http://www.iwr.uni-heidelberg.de/groups/comopt/software/PORTA/
+
+qhull.rules
+  The Quickhull algorithm for convex hulls.
+  Copyright by The Geometry Center, University of Minnesota
+  http://www.qhull.org/
+
+_4ti2.rules
+  4ti2 -- A software package for algebraic, geometric and combinatorial problems on linear spaces.
+  Copyright by 4ti2 team.
+  http://www.4ti2.de/
+
+vinci.rules
+  Vinci - Computing Volumes of Convex Polytopes.
+  Copyright by Benno Büeler, Andreas Enge, and Komei Fukuda
+  http://www.lix.polytechnique.fr/Labo/Andreas.Enge/Vinci.html
+
+azove.rules
+  azove is a tool designed for counting (without explicit enumeration) and enumeration of 0/1 vertices.
+  Copyright by Markus Behle
+  http://www.mpi-inf.mpg.de/~behle/azove.html
+
+topcom.rules
+  TOPCOM is a package for computing Triangulations Of Point Configurations and Oriented Matroids.
+  Copyright by Jörg Rambau.
+  http://www.rambau.wm.uni-bayreuth.de/TOPCOM/
+
+mptopcom.rules
+   mptopcom is a software developed at TU Berlin and Hokkaido University for
+   computing triangulations of point configurations in parallel.
+   Copyright by Charles Jordan, Michael Joswig, Lars Kastner.
+   https://polymake.org/mptopcom
+
+latte.rules
+  LattE (Lattice point Enumeration) is a computer software dedicated to the
+  problems of counting lattice points and integration inside convex polytopes.
+  Copyright by Matthias Koeppe, Jesus A. De Loera and others.
+  http://www.math.ucdavis.edu/~latte/
+
+common::povray.rules
+  Persistence of Vision Ray tracer, a tool for creating 3-d photo-realistic images.
+  http://www.povray.org
+
+common::geomview.rules
+  Geomview is an interactive 3D viewing program, originally developed
+  at The Geometry Center, at the University of Minnesota.
+  http://www.geomview.org/
+
+common::svg.rules
+   Generated using the Perl SVG Module
+   by Ronan Oger
+
+common::x3d.rules
+common::sketch.rules
+  Free Graphics Software for the TeX, LaTeX, and PSTricks Community
+  http://www.frontiernet.net/~eugene.ressler/
+
+common::postscript.rules
+common::pdfviewer.rules
+
+To enable an interface:  reconfigure("RULEFILE");
+
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~`
+#
+# Playing around to get used to polymake;
+# See: https://polymake.org/doku.php/user_guide/tutorials/release/3.4/lattice_polytopes_tutorial#lattice_points_in_rational_polytopes
+# for more commands:
+
+# Each point has a 1 in its first coordinate because of homogeneous coordinates;
+
+$p = new Polytope(POINTS=>[[1,-1,-1],[1,1,-1],[1,-1,1],[1,1,1],[1,0,0]]);
+
+print $p->VERTICES;
+
+print $p->N_LATTICE_POINTS;
+
+print $p->EHRHART_POLYNOMIAL;
+
+# Now actual T*CP2 polytope;
+# For (k,a) = (5,2) for example;
+
+$p2_52 = new Polytope(POINTS=>[ [1,7,0], [1,7,-2], [1,0,-2], [1,-2,0], [1,-2,7], [1,0,7]]);
+
+# (k,a) = (10,4);
+
+$p2_104 = new Polytope(POINTS=>[ [1,14,0], [1,14,-4], [1,0,-4], [1,-4,0], [1,-4,14], [1,0,14]]);
+
+
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+# For T*CP3;
+
+$p3_52 = new Polytope(POINTS=>[ [1,7,0,0], [1,7,-2,0], [1,7,0,-2], [1,0,7,0], [1,-2,7,0], [1,0,7,-2], [1,0,0,7], [1,-2,0,7], [1,0,-2,7], [1,-2,0,0], [1,0,-2,0], [1,0,0,-2] ]);
+
+
+
+
+
+
