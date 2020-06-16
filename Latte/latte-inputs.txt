@@ -1,0 +1,37 @@
+
+
+# h-representation (given by inequalities and hyperplanes)
+
+5 3 
+1 -1 0
+1 0 -1
+1 -1 -1
+0 1 0
+0 0 1
+
+# v-representation (given by the vertices which make up the convex hull)
+# The example below gives the vertices of the rectangle (0,0), (2/3,0), (0,1/4), (2/3,1/4):
+
+4 3
+1 0 0
+3 2 0
+4 0 1
+12 8 3
+
+# Another example, for the 2-simplex (i.e. a right-angled triangle of side-length k)
+
+3 2
+1 0 0
+1 k 0
+1 0 k
+
+# The count command
+# It has a nice help menu, by running
+# count --help
+
+# Some other commands
+
+count fileName.hrep.latte
+count --vrep fileName.vrep.latte
+count --cdd fileName.ine
+
