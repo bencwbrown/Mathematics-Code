@@ -1,13 +1,32 @@
 
+
 loadPackage Polyhedra
 loadPackage "NormalToricVarieties"
 
-L = matrix "1,0;0,1"
 
-transpose L
+matA = matrix "1, 1, -1"
+
+A = image matA
+
+L = ker matA
+
+matL = gens L
+
+
+I = transpose matA
+
+PI = transpose matL
+
+hilbertBasis(transpose matL, InputType => "lattice")
+
+
+
+
+
+L = transpose matrix "-1,1,0,0; 1,0,1,-1"
 
 hilbertBasis(L, InputType => "lattice")
 
-L11 = matrix "-1,1,0,0,0; 1,0,1,-1,0; 1,0,0,1,1"
+L12 = matrix "-1,1,0,0,0; 1,0,1,-1,0; 3,0,2,0,1"
 
-hilbertBasis(L11, InputType => "lattice")
+hilbertBasis(L12, InputType => "lattice")
