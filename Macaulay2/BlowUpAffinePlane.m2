@@ -12,19 +12,15 @@ L = ker matA
 
 matL = gens L
 
-
-I = transpose matA
-
-PI = transpose matL
-
 hilbertBasis(transpose matL, InputType => "lattice")
 
+matPosL = matrix "1,-1,0,0; 1,0,1,0; 1,0,0,1"
 
-La = matrix "1, -1, 0, 0; 1, 0, 1, 0; 1, 0, 0, 1"
+hilbertBasis(matPosL, InputType => "lattice")
 
+matNegL = matrix "1,-1,0,0; 1,0,1,0; 0,0,1,1"
 
-
-
+hilbertBasis(matNegL, InputType => "lattice")
 
 
 
