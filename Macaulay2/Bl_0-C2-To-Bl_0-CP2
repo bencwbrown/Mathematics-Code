@@ -1,0 +1,58 @@
+
+
+loadPackage Polyhedra
+loadPackage "NormalToricVarieties"
+
+
+matA = matrix "1, 1, -1"
+
+A = image matA
+
+L0 = ker matA
+
+matL0 = gens L0
+
+hilbertBasis(transpose matL0, InputType => "lattice")
+
+matPosL = matrix "1,0,1,0; 0,1,1,0; 1,0,0,1"
+
+hilbertBasis(matPosL, InputType => "lattice")
+
+matNegL = matrix "1,0,1,0; 0,1,1,0; 0,0,1,1"
+
+hilbertBasis(matNegL, InputType => "lattice")
+
+
+
+W = matrix "1, 1, -1, 0; 0, 0, 1, 1"
+
+L00 = ker W
+
+matL00 = gens L00
+
+hilbertBasis(transpose matL00, InputType => "lattice")
+
+
+L11 = matrix "1,-1,0,0,0; 1,0,1,-1,0; 1,0,0,1,1"
+
+hilbertBasis(L11, InputType => "lattice")
+
+
+
+
+
+matPosM42 = matrix "-1, 1, 0, 0, 0; -1, 0, 1, -1, 0; 4, 0, 0, 2, 1"
+
+hilbertBasis(matPosM42, InputType => "lattice")
+
+
+
+
+
+
+
+
+
+
+
+
