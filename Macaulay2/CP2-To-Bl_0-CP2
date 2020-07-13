@@ -14,22 +14,41 @@ matL0 = gens L0
 
 hilbertBasis(transpose matL0, InputType => "lattice")
 
-
 matPosL = matrix "1,-1,0,0; 1,0,-1,0; 1,0,0,1"
 
 hilbertBasis(matPosL, InputType => "lattice")
 
 
 
+B00 = matrix "1, 1, 1, 0; 0, 0, 1, 1"
+
+M00 = ker B00
+
+matM00 = gens M00
+
+hilbertBasis(transpose matM00, InputType => "lattice")
+
+
+matPosM21 = matrix "-1, 1, 0, 0, 0; -1, 0, 1, -1, 0; 2, 0, 0, 1, 1"
+
+hilbertBasis(matPosM21, InputType => "lattice")
 
 
 
 
 
-L = transpose matrix "-1,1,0,0; 1,0,1,-1"
+matPosM42 = matrix "-1, 1, 0, 0, 0; -1, 0, 1, -1, 0; 4, 0, 0, 2, 1"
 
-hilbertBasis(L, InputType => "lattice")
+hilbertBasis(matPosM42, InputType => "lattice")
 
-L12 = matrix "-1,1,0,0,0; 1,0,1,-1,0; 3,0,2,0,1"
 
-hilbertBasis(L12, InputType => "lattice")
+
+
+
+
+
+
+
+
+
+
