@@ -1,3 +1,4 @@
+
 loadPackage Polyhedra
 loadPackage "NormalToricVarieties"
 
@@ -6,9 +7,9 @@ L = transpose matrix "-1,1,0,0; 1,0,1,-1"
 
 hilbertBasis(L, InputType => "lattice")
 
-L12 = matrix "-1,1,0,0,0; 1,0,1,-1,0; 3,0,2,0,1"
+L11 = matrix "-1,1,0,0,0; 1,0,1,-1,0; 1,0,0,1,1"
 
-hilbertBasis(L12, InputType => "lattice")
+hilbertBasis(L11, InputType => "lattice")
 
 
 
