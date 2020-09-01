@@ -86,13 +86,11 @@ Sum_1 = T1_23 + S1_233 + S1_232
 
 limSum_1 = limit(Sum_1, t, 0)
 
-# --- IGNORE THIS SECTION
-
 # For the whole polyptych, ignoring the contribution from the
 # overlapping boundaries between the components for now, 
 # we have that the lattice point (over)count is:
 
-# limSumOverlap = (1 * limSum_123) + (3 * limSum_12) + (3 * limSum_1)
+limSumOverlap = (1 * limSum_123) + (3 * limSum_12) + (3 * limSum_1)
 
 # In the above sum, we over count by ( 3*(k + 1) + 6*(a + 1) - 3 ),
 # where the (k+1)-terms come from the walls of the interior core, and
@@ -101,6 +99,4 @@ limSum_1 = limit(Sum_1, t, 0)
 # by adding back in the interior fixed points, which lie in the intersections
 # of four polytopes of the polypych:
 
-# limSumFinal = limSumOverlap - ( 3*(k+1) + 6*(a+1) - 3 )
-
-# --- ENG OF IGNORE
+limSumFinal = limSumOverlap - ( 3*(k+1) + 6*(a+1) - 3 )

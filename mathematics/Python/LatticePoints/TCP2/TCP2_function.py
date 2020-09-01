@@ -20,9 +20,6 @@ def P12(k,a):
 def P23(k,a):
     return k*N.i
 
-def P23(k,a):
-    return k*N.i
-
 def P13(k,a):
     return k*N.j
 
@@ -78,7 +75,7 @@ def Sum_123(k,a):
 def limSum_123(k,a):
     return limit(Sum_123(k,a), t, 0)
 
-# For Delta_{12}:
+# For Delta_{12} (and other two index sub-polytopes):
 
 def T12_23(k,a):
     return f(P23(k,a), v1, -v1 + v2)
@@ -98,7 +95,7 @@ def Sum_12(k,a):
 def limSum_12(k,a):
     return limit(Sum_12(k,a), t, 0)
 
-# For Delta_{1}:
+# For Delta_{1} (and other single index sub-polytopes):
 
 def T1_23(k,a):
     return f(P23(k,a), v1 - v2, v1)
@@ -115,12 +112,14 @@ def Sum_1(k,a):
 def limSum_1(k,a):
     return limit(Sum_1(k,a), t, 0)
 
+# --- IGNORE THIS SECTION
+
 # For the whole polyptych, ignoring the contribution from the
 # overlapping boundaries between the components for now, 
 # we have that the lattice point (over)count is:
 
-def limSumOverlap(k,a):
-    return (1 * limSum_123(k,a)) + (3 * limSum_12(k,a)) + (3 * limSum_1(k,a))
+#def limSumOverlap(k,a):
+#    return (1 * limSum_123(k,a)) + (3 * limSum_12(k,a)) + (3 * limSum_1(k,a))
 
 # In the above sum, we over count by ( 3*(k + 1) + 6*(a + 1) - 3 ),
 # where the (k+1)-terms come from the walls of the interior core, and
@@ -129,6 +128,10 @@ def limSumOverlap(k,a):
 # by adding back in the interior fixed points, which lie in the intersections
 # of four polytopes of the polypych:
 
-def limSumFinal(k,a):
-    return limSumOverlap(k,a) - ( 3*(k+1) + 6*(a+1) - 3 )
+#def limSumFinal(k,a):
+#    return limSumOverlap(k,a) - ( 3*(k+1) + 6*(a+1) - 3 )
 
+# --- END OF IGNORE
+
+def limSumOverlap(k,a):
+    return (1 * limSum_123(k,a)) + (3 * limSum_12(k,a)) + (3 * limSum_1(k,a))

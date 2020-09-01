@@ -14,10 +14,9 @@ Phi = t*(N.i + 2*N.j + 3*N.k)
 # Set the fixed points of the action; P denotes those that belong
 # to the core, and Q those that come from the cut extended core:
 
-P123 = Vector.zero
-P234 = k*N.i
-P134 = k*N.j
-P124 = k*N.k
+P12 = Vector.zero
+P23 = k*N.i
+P13 = k*N.j
 
 Q12_1 = -a*N.j
 Q12_2 = -a*N.i
@@ -54,7 +53,7 @@ Sum_123 = T123_12 + T123_23 + T123_13
 
 limSum_123 = limit(Sum_123, t, 0)
 
-# For Delta_{12}:
+# For Delta_{12} (and other two index sub-polytopes):
 
 T12_23 = f(P23, v1, -v1 + v2)
 S12_232 = f(Q23_2, -v1 + v2, -v1)
@@ -65,18 +64,7 @@ Sum_12 = T12_23 + S12_232 + S12_131 + T12_13
 
 limSum_12 = limit(Sum_12, t, 0)
 
-# For Delta_{13}:
-
-T13_12 = f(P12, -v2, v1)
-T13_23 = f(P23, -v1, v1 - v2) 
-S13_121 = f(Q12_1, v1, v2)
-S13_233 = f(Q23_3, -v1 + v2, -v1)
-
-Sum_13 = T13_12 + T13_23 + S13_121 + S13_233
-
-limSum_13 = limit(Sum_13, t, 0)             # This actual equals limSum_12
-
-# For Delta_{1}:
+# For Delta_{1} (and other single index sub-polytopes):
 
 T1_23 = f(P23, v1 - v2, v1)
 S1_233 = f(Q23_3, v2, v2 - v1)
@@ -104,3 +92,5 @@ limSum_1 = limit(Sum_1, t, 0)
 # limSumFinal = limSumOverlap - ( 3*(k+1) + 6*(a+1) - 3 )
 
 # --- ENG OF IGNORE
+
+totalSum = limSum_123 + 3*limSum_12 + 3*limSum_1

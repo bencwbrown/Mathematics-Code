@@ -180,8 +180,9 @@ def limSum_1(k,a):
 def limSum_1234(k,a):
     return k**3/6 + k**2 + 11*k/6 + 1
 
-# ORIGINAL THEN DID NOT COUNT OVERLAP - NEED OVERLAP FOR MULTIPLICITY TWO WEIGHTS? 
-# I.E. ON OVERLAP?
+# For the whole polyptych, ignoring the contribution from the
+# overlapping boundaries between the components for now, 
+# we have that the lattice point (over)count is:
 
 def limSumOverlap(k,a):
     return (1 * limSum_1234(k,a)) + (4 * limSum_124(k,a)) + (6 * limSum_12(k,a)) + (4*limSum_1(k,a))
