@@ -71,13 +71,10 @@ def Delta3(k,a):
 def Sum(k,a):
     return Delta1(k,a) + Delta2(k,a) + Delta3(k,a) 
 
+# Take the limit as t -> 0 to get the Euler characteristic(?)
 
-
-
-
-
-
-
+def Euler(k,a):
+    return limit(Sum(k,a),t,0)
 
 
 # OLD
