@@ -1,11 +1,13 @@
 compactMatrixForm = false       -- "Nicer" matrix printing
 
-R = QQ[z1, z2, z3, w1, w2, w3];
-I = ideal( z1*w1, z2*w2, z3*w3 );
+R = QQ[z1, z2, z3, z4, w1, w2, w3, w4] / ideal( z1* z3 - z2*z4 );
+-- Segre = ideal( z1*z3 - z2*z4 );
+-- R = R / Segre;
+I = ideal( z1*w1, z2*w2, z3*w3, z4*w4 );
 
-A = ideal( z1, z2, z3 );
+A = ideal( z1, z2, z3, z4 );
 
-B = ideal( w1, w2, w3 );
+B = ideal( w1, w2, w3, z4 );
 
 -- Useful commands: gens, numgens, basis
 
